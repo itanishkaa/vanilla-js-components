@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Textarea</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div style="width: 100%; max-width: 520px;">
+      <div class="composer-card">
+        <div class="editor-container">
+          <div class="backdrop" id="backdrop"></div>
+          <textarea id="tweetInput" placeholder="What's happening?!"></textarea>
+        </div>
+        <div class="controls">
+          <div class="progress-container">
+            <svg class="progress-ring" width="32" height="32">
+              <circle 
+                class="progress-ring__bg"
+                stroke="#eff3f4"
+                stroke-width="3"
+                fill="transparent"
+                r="12"
+                cx="16"
+                cy="16"
+              />
+              <circle 
+                class="progress-ring__circle"
+                id="progressCircle"
+                stroke="#1d9bf0"
+                stroke-width="3"
+                fill="transparent"
+                r="12"
+                cx="16"
+                cy="16"
+              />
+            </svg>
+          </div>
+          <span class="char-count" id="charCount">20</span>
+          <button class="submit-btn" id="submitBtn" disabled>Post</button>
+        </div>
+      </div>
+      <div class="feed-container" id="feed"></div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
