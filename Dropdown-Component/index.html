@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vanilla JS Dropdown Component</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="intro">
+      <h1>Dropdown Component</h1>
+      <p>Single select, multi select.</p>
+    </section>
+
+    <section class="demo-grid" aria-label="Dropdown examples">
+      <div class="panel">
+        <div class="panel-header">
+          <h2>Single Select</h2>
+          <p>Closes after choosing one option.</p>
+        </div>
+        <div id="single-dropdown"></div>
+        <p class="result">Selected: <span id="single-result">None</span></p>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <h2>Multi Select</h2>
+          <p>Choose more than one option.</p>
+        </div>
+        <div id="multi-dropdown"></div>
+        <p class="result">Selected: <span id="multi-result">None</span></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

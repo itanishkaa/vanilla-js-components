@@ -1,0 +1,258 @@
+:root {
+  color-scheme: light;
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --ink: #18202f;
+  --muted: #687386;
+  --line: #d8dee8;
+  --accent: #2563eb;
+  --accent-soft: #e8f0ff;
+  --chip: #edf7f1;
+  --chip-ink: #17633b;
+  --shadow: 0 16px 40px rgba(24, 32, 47, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.page-shell {
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 56px 0;
+}
+
+.intro {
+  max-width: 680px;
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 12px;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1;
+}
+
+.intro p:last-child,
+.panel-header p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.panel {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(24, 32, 47, 0.06);
+}
+
+.panel-header {
+  margin-bottom: 18px;
+}
+
+.panel-header h2 {
+  margin-bottom: 6px;
+  font-size: 1.15rem;
+}
+
+.result {
+  margin: 18px 0 0;
+  color: var(--muted);
+}
+
+.result span {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  padding: 8px 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.dropdown-toggle:focus-visible,
+.dropdown.open .dropdown-toggle {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.14);
+}
+
+.dropdown-value {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.placeholder {
+  color: var(--muted);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  border-radius: 999px;
+  background: var(--chip);
+  color: var(--chip-ink);
+  padding: 4px 9px;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.chevron {
+  width: 10px;
+  height: 10px;
+  flex: 0 0 auto;
+  border-bottom: 2px solid var(--muted);
+  border-right: 2px solid var(--muted);
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 160ms ease;
+}
+
+.dropdown.open .chevron {
+  transform: rotate(225deg) translateY(-1px);
+}
+
+.dropdown-menu {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  display: none;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+
+.dropdown-search {
+  width: calc(100% - 20px);
+  margin: 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 10px 12px;
+  color: var(--ink);
+}
+
+.dropdown-search:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.dropdown-list {
+  max-height: 230px;
+  overflow-y: auto;
+  padding: 6px;
+}
+
+.dropdown-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ink);
+  padding: 10px 12px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dropdown-option:hover,
+.dropdown-option.active {
+  background: var(--accent-soft);
+}
+
+.dropdown-option.selected {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.checkmark {
+  color: var(--accent);
+  font-weight: 900;
+}
+
+.empty-state {
+  padding: 18px 12px;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .page-shell {
+    width: min(100% - 24px, 520px);
+    padding: 32px 0;
+  }
+
+  .demo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    padding: 18px;
+  }
+}
