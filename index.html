@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Popup Modal</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="cookie-popup" class="cookie-popup hidden">
+        <div class="cookie-content">
+            <h3>🍪 We Value Your Privacy</h3>
+            <p>We use cookies to improve your browsing experience and analyze site traffic.</p>
+            <div class="preferences-menu hidden" id="preferences-menu">
+                <label>
+                    <input type="checkbox" checked disabled />
+                    Necessary (Always Active)
+                </label>
+                <label>
+                    <input type="checkbox" id="pref-analytics" />
+                    Analytics Cookies
+                </label>
+                <label>
+                    <input type="checkbox" id="pref-marketing" />
+                    Marketing Cookies
+                </label>
+            </div>
+            <div class="cookie-buttons">
+                <button id="btn-accept-all" class="btn btn-primary">Accept All</button>
+                <button id="btn-save-pref" class="btn btn-secondary hidden">Save Preferences</button>
+                <button id="btn-customize" class="btn btn-outline">Manage Preferences</button>
+                <button id="btn-reject-all" class="btn btn-danger">Reject Optional</button>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
